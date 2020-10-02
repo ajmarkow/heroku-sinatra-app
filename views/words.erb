@@ -1,1 +1,12 @@
 <h1>Words</h1>
+
+<% if @@wordcontainer.any? %>
+  <ul>
+    <% @@wordcontainer.each do |dictionary| %>
+      <li><%= dictionary.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no words to display.</p>
+<% end %>
+<a href="/">Add a new word</a>

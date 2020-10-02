@@ -6,14 +6,11 @@ also_reload("lib/**/*.rb")
 
 # Quick test
 get("/") do
+  @dictionaries = Dictionary.all()
   erb(:mainpage)
 end
 
-get("/words") do
-  erb(:words)
-end
-
-get("/words/:id") do
+get("/words/") do
   "Shows a specific word based on id.  Use #{params[:id]}"
 end
 
@@ -21,6 +18,7 @@ post("/words") do
   @word = params[:wordtoadd]
   @definition = params[:definition]
   word = Dictionary.new({ :name => "#{@word}", :definition => "#{@definition}", :wordid => "1" })
+  @dictionaries = Dictionary.all()
   word.save()
   erb(:mainpage)
 end

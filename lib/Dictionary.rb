@@ -5,7 +5,7 @@ class Dictionary
   @@wordcontainer = {}
   @@total_rows = 0
 
-  def all
+  def self.all
     @@wordcontainer.values()
   end
 

@@ -29,12 +29,25 @@
           <hr>
           <h4>Your words:</h4>
   <ul>
-  <li><%= @word %> </li>
+  <% if @dictionaries.any? %>
+  <li><% @dictionaries.each do |item| %> </li>
+      <li><%= item.name %></li>
+        <% end %>
+      <% else %>
+      <p>No words yet. Add some.</p>
+      <% end %>
   </ul>
           <hr>
             <h4>Your words + their definitions:</h4>
             <ul>
-              <li>Word - <%= @word %> <em>Defined as: </em><%= @definition %> </li>
+               <% if @dictionaries.any? %>
+  <li><% @dictionaries.each do |item| %> </li>
+      <li>Word -<%= item.name %> Defined As = <%= item.definition %></li>
+        <% end %>
+      <% else %>
+      <p>You'll see words and their definitions here once you add some..</p>
+      <% end %>
+  </ul>
             </ul>
             <hr>
         </div>      
