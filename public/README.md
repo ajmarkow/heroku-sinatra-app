@@ -2,7 +2,7 @@
 
 ---
 
-An interactive dictionary, 10/2/2020
+An interactive dictionary, written 10/2/2020
 
 By **AJ Markow**
 
