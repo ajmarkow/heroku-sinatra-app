@@ -10,7 +10,7 @@ get("/") do
 end
 
 get("/words") do
-  "This route will show a list of all words"
+  erb(:words)
 end
 
 get("/words/:id") do
@@ -18,7 +18,6 @@ get("/words/:id") do
 end
 
 post("/words") do
-  "Will add a word to our dictionary."
   erb(:words)
 end
 
