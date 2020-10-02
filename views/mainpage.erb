@@ -30,7 +30,7 @@
           <h4>Your words:</h4>
   <ul>
   <% if @dictionaries.any? %>
-  <li><% @dictionaries.each do |item| %> </li>
+  <% @dictionaries.each do |item| %>
       <li><%= item.name %></li>
         <% end %>
       <% else %>
@@ -41,7 +41,8 @@
             <h4>Your words + their definitions:</h4>
             <ul>
                <% if @dictionaries.any? %>
-  <li><% @dictionaries.each do |item| %> </li>
+  <% @dictionaries.each do |item| %> 
+  <a href="/words/<%= item.wordid %>">
       <li>Word -<%= item.name %> Defined As = <%= item.definition %></li>
         <% end %>
       <% else %>

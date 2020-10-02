@@ -1,9 +1,9 @@
 <h1>Words</h1>
 
-<% if @@wordcontainer.any? %>
+<% if @dictionaries.any? %>
   <ul>
-    <% @@wordcontainer.each do |dictionary| %>
-      <li><%= dictionary.name %></li>
+    <% @dictionaries.each do |word| %>
+      <li><%= word.name %></li>
     <% end %>
   </ul>
 <% else %>
