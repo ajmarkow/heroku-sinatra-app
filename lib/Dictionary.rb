@@ -23,4 +23,8 @@ class Dictionary
     @@wordcontainer = {}
     @@total_rows = 0
   end
+
+  def find(id)
+    @@wordcontainer[id]
+  end
 end

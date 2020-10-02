@@ -3,22 +3,40 @@
     <h1 class="text-align-center">My Dictionary</h1>
     </div>
         <div class ="row">
+        <hr>
             <h4>Add a word!</h4>
           </div>
           <div class="row">
             <div class="form-group">
               <label for="">Your New Word</label>
+              <form action="/words" method="post">
               <input type="text"
-                class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+                class="form-control" name="wordtoadd" id="wordtoadd" aria-describedby="helpId" placeholder="">
               <small id="helpId" class="form-text text-muted">Type your new word above.</small>
+              <br>
+              <br>
+              <div class="form-group">
+                <label for="">Definition</label>
+                <input type="text"
+                  class="form-control" name="definition" aria-describedby="helpId2" placeholder="">
+                <small id="helpId2" class="form-text text-muted">Enter  the word's meaning here.</small>
+              </div>
+                        <button type="submit" class="btn btn-primary btn-md btn-block">Add a word</button>
+          </form>
             </div>
-          <button type="button" name="Add Word" id="addword" class="btn btn-primary btn-md btn-block">Add a word</button>
           </div>
           <div class="row">
           <hr>
           <h4>Your words:</h4>
+  <ul>
+  <li><%= @word %> </li>
+  </ul>
           <hr>
             <h4>Your words + their definitions:</h4>
+            <ul>
+              <li>Word - <%= @word %> <em>Defined as: </em><%= @definition %> </li>
+            </ul>
+            <hr>
         </div>      
 </div>
 </div>
