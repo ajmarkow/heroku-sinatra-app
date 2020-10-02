@@ -12,7 +12,7 @@ require 'bundler'
 configure :production do
 
 # Quick test
-get '/' do
-  erb(:mainpage)
-end
+get('/') do
+erb(views/:mainpage)
+  end
 
