@@ -4,5 +4,5 @@ require "bundler"
 
 # Quick test
 get("/") do
-  erb(views / :mainpage)
+  erb(:mainpage)
 end
