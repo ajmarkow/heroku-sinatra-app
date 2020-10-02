@@ -4,6 +4,6 @@ require "bundler"
 require "config"
 
 # Quick test
-get("/") do
+get("/main") do
   erb(:mainpage)
 end
