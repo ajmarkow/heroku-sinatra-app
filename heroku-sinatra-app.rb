@@ -7,6 +7,7 @@
 #
 require 'rubygems'
 require 'sinatra'
+require 'bundler'
 
 configure :production do
 
