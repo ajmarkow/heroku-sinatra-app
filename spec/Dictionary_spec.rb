@@ -17,3 +17,11 @@ describe("save") do
     expect(testdictionary.wordid).to eq(2)
   end
 end
+
+describe(".clear") do
+  it("clears word container") do
+    testdictionary = Dictionary.new({ :name => "car", :definition => "a vehicle", :wordid => 2 })
+    testdictionary.clear()
+    expect(testdictionary.all).to(eq([]))
+  end
+end

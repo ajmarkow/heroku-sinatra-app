@@ -18,4 +18,9 @@ class Dictionary
     @definition = attributes.fetch(:definition)
     @wordid = @wordid || @@total_rows += 1
   end
+
+  def clear
+    @@wordcontainer = {}
+    @@total_rows = 0
+  end
 end
