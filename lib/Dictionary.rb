@@ -29,6 +29,10 @@ class Dictionary
     @@wordcontainer[self.wordid] = Dictionary.new({:name => self.name, :definition =>self.definition, :wordid => self.wordid})
   end
 
+  def delete
+    @@wordcontainer.delete(self.wordid)
+  end
+
   def find(word_id)
    return @@wordcontainer[wordid]
   end

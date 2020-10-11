@@ -14,14 +14,21 @@ describe("save") do
     testdictionary.save()
     expect(testdictionary.name).to eq("car")
     expect(testdictionary.definition).to eq("a vehicle")
-    expect(testdictionary.wordid).to eq(2)
   end
 end
 
 describe("clear") do
-  it("clears word container") do
+  it("clears definitions") do
     testdictionary = Dictionary.new({ :name => "car", :definition => "a vehicle", :wordid => 2 })
     testdictionary.clear()
+    expect(testdictionary.all).to(eq([]))
+  end
+end
+
+describe("delete") do
+  it("removes a word from the dictionary") do
+    testdictionary = Dictionary.new({ :name => "car", :definition => "a vehicle", :wordid => 2 })
+    testdictionary.delete()
     expect(testdictionary.all).to(eq([]))
   end
 end
