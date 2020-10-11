@@ -5,7 +5,7 @@ class Dictionary
   @@wordcontainer = {}
   @@total_rows = 0
 
-  def self.all
+  def all
     @@wordcontainer.values()
   end
 
@@ -24,7 +24,13 @@ class Dictionary
     @@total_rows = 0
   end
 
-  def find(id)
-    @@wordcontainer[id]
+  def update(name)
+    self.name = name
+    @@wordcontainer[self.wordid] = Dictionary.new({:name => self.name, :definition =>self.definition, :wordid => self.wordid})
   end
+
+  def find(word_id)
+   return @@wordcontainer[wordid]
+  end
+
 end

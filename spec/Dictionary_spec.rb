@@ -27,18 +27,20 @@ describe("clear") do
 end
 
 describe("update") do
-  it("clears word container") do
+  it("changes a word") do
     testdictionary = Dictionary.new({ :name => "car", :definition => "a vehicle", :wordid => 2 })
-    testdictionary.update()
-    expect(testdictionary.all).to(eq([]))
+    testdictionary.update('automobile')
+    expect(testdictionary.name).to(eq('automobile'))
   end
 end
 
 describe("find") do
   it("returns a specific word") do
-    testdictionary2 = Dictionary.new({ :name => "motorcycle", :definition => "a vehicle with two wheels", :wordid => 1 })
-    testdictionary = Dictionary.new({ :name => "car", :definition => "a vehicle", :wordid => 2 })
-    testdictionary.find(2)
-    expect(testdictionary.find(2)).to(eq(testdictionary))
+    testdictionary2 = Dictionary.new({ :name => "motorcycle", :definition => "a vehicle with two wheels", :wordid => nil })
+    testdictionary = Dictionary.new({ :name => "car", :definition => "a vehicle", :wordid => nil })
+    testdictionary.save()
+    testdictionary2.save()
+    testoffind =testdictionary2.find(1)
+    expect(testoffind.name).to(eq('motorcycle'))
   end
 end
