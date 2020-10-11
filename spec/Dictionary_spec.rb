@@ -18,10 +18,27 @@ describe("save") do
   end
 end
 
-describe(".clear") do
+describe("clear") do
   it("clears word container") do
     testdictionary = Dictionary.new({ :name => "car", :definition => "a vehicle", :wordid => 2 })
     testdictionary.clear()
     expect(testdictionary.all).to(eq([]))
+  end
+end
+
+describe("update") do
+  it("clears word container") do
+    testdictionary = Dictionary.new({ :name => "car", :definition => "a vehicle", :wordid => 2 })
+    testdictionary.update()
+    expect(testdictionary.all).to(eq([]))
+  end
+end
+
+describe("find") do
+  it("returns a specific word") do
+    testdictionary2 = Dictionary.new({ :name => "motorcycle", :definition => "a vehicle with two wheels", :wordid => 1 })
+    testdictionary = Dictionary.new({ :name => "car", :definition => "a vehicle", :wordid => 2 })
+    testdictionary.find(2)
+    expect(testdictionary.find(2)).to(eq(testdictionary))
   end
 end
