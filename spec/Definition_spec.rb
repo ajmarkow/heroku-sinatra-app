@@ -19,9 +19,9 @@ end
 
 describe('#delete') do
   it('Deletes a definition by id') do
-    testdictionary = Definition.new({ :text => "a flying death machine", :id => nil, :wordid => 1 })
+    testdictionary = Definition.new({ :text => "a flying death machine", :id => nil, :wordid => nil })
  testdictionary.save()
-    testdictionary2 = Definition.new({ :text => "not a flying death machine", :id => nil, :wordid => 1 })
+    testdictionary2 = Definition.new({ :text => "not a flying death machine", :id => nil, :wordid => nil })
     testdictionary2.save()
     testdictionary2.delete()
     expect(Definition.all).to(eq([testdictionary]))

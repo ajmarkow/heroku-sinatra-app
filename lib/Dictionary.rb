@@ -5,7 +5,7 @@ class Dictionary
   @@wordcontainer = {}
   @@total_rows = 0
 
-  def all
+  def self.all
     @@wordcontainer.values()
   end
 
@@ -33,7 +33,7 @@ class Dictionary
     @@wordcontainer.delete(self.wordid)
   end
 
-  def find(word_id)
+  def self.find(wordid)
    return @@wordcontainer[wordid]
   end
 

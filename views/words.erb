@@ -4,9 +4,24 @@
   <ul>
     <% @dictionaries.each do |word| %>
       <li><%= word.name %></li>
+      <form action="/word/<%=word.wordid %>/delete" method="post">
+<button type ='submit' class ='btn-danger'>Delete The Word</button>
+</form>
+<button href ='/definition/<%=word.wordid%>/update' class ='btn-primary'>Update The Word</button>
+              <form action="/definition/<%=word.wordid %>/add" method="post">
+              <br>
+              <div class="form-group">
+                <label for="">Definition</label>
+                <input type="text"
+                  class="form-control" name="definition" aria-describedby="helpId2" placeholder="">
+                <small id="helpId2" class="form-text text-muted">Enter  the extra definition here.</small>
+              </div>
+                        <button type="submit" class="btn btn-primary btn-md btn-block">Add a definition</button>
+          </form>
     <% end %>
   </ul>
 <% else %>
   <p>There are currently no words to display.</p>
 <% end %>
 <a href="/">Add a new word</a>
+<a href="/">Back to Main</a>

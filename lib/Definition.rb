@@ -23,7 +23,7 @@ class Definition
     @@definitions[self.id] = Definition.new({:text => self.text, :wordid => self.wordid, :id => self.id})
   end
   
-  def self.find(id)
+  def find(id)
     @@definitions[id]
   end
   

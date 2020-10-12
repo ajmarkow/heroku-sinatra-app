@@ -10,22 +10,40 @@ get("/") do
   erb(:mainpage)
 end
 
-get("/words") do
+get("/words/") do
+  @dictionaries = Dictionary.all()
   erb(:words)
 end
 
 post("/words") do
   @word = params[:wordtoadd]
   @definition = params[:definition]
-  word = Dictionary.new({ :name => "#{@word}", :definition => "#{@definition}", :wordid => 1 })
-  @dictionaries = Dictionary.all()
+  @dictionaries = Dictionary.all
+  word = Dictionary.new({ :name => "#{@word}", :definition => "#{@definition}", :wordid => nil })
   word.save()
   erb(:words)
 end
 
-get("words/:id") do
-  @word = Dictionary.find(params[:id].to_i())
+
+get("/word/:id") do
+  id = params[:id]
+  @dictionaries = Dictionary.all
+  @word =Dictionary.find(id)
   erb(:word)
+end
+
+get("/definition/:id/update") do
+  word= params[:id]
+  @dictionaries = Dictionary.all
+  @word =Dictionary.find(word)
+  erb(:definitions)
+end
+
+post("/word/:id/delete") do
+  dictionaries = Dictionary.all
+  word =dictionaries.find(params['id'])
+  word.delete
+  erb(:mainpage)
 end
 # get("words/:id/edit") do
 #   Page with form for updating album with an id of #{params[:id]}
